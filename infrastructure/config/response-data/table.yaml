@@ -1,0 +1,12 @@
+template_path: templates/dynamo_table.py
+parameters:
+  TableName: dummy-client-data-table
+sceptre_user_data:
+  TableProperties:
+    KeySchema:
+      - ClientName: HASH
+    ProvisionedThroughput:
+      ReadCapacityUnits: 5
+      WriteCapacityUnits: 5
+    AttributeDefinitions:
+      - ClientName: S

@@ -1,0 +1,12 @@
+template_path: templates/dynamo_table.py
+parameters:
+  TableName: survey-questions-table
+sceptre_user_data:
+  TableProperties:
+    KeySchema:
+      - survey-name: HASH
+    ProvisionedThroughput:
+      ReadCapacityUnits: 5
+      WriteCapacityUnits: 5
+    AttributeDefinitions:
+      - survey-name: S

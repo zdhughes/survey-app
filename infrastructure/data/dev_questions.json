@@ -1,0 +1,15 @@
+{
+  "SurveyName": "DevSurvey",
+  "questions": [
+    {
+      "keyName": "APPLICATION_NAME",
+      "question": "What is the name of this application?",
+      "repeatable": "false"
+    },
+    {
+      "keyName": "SERVER_INFO",
+      "question": "What are the server details?",
+      "repeatable": "true"
+    }
+  ]
+}
