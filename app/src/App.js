@@ -1,19 +1,34 @@
 import React, { Component } from 'react';
-import { PageHeader } from 'react-bootstrap';
-// import SurveyContainer from './components/SurveyContainer';
-import SingleQuestion from './components/SingleQuestion';
-import SampleForm from './components/SampleForm';
+import Navigator from "./components/Navigator";
+import ServiceRouter from './components/ServiceRouter';
 import './App.css';
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      service: "home"
+    };
+    this.changeService = this.changeService.bind(this);
+  }
+
+  changeService(event) {
+    const target = event.target
+    this.setState({
+      service: target.name
+    })
+  }
+
   render() {
     return (
-      <div>
-        <PageHeader>
-          Survey: <small>Please select from the dropdown</small>
-        </PageHeader>
-        <SampleForm />
+      <div className="App">
+        <div>
+          <Navigator onClick={this.changeService} />
+        </div>
+        <div>
+          <ServiceRouter service={this.state.service}/>
+        </div>
       </div>
     );
   }
